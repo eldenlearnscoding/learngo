@@ -22,6 +22,18 @@ func main() {
 		fmt.Printf("Args[%d] = %v\n", i, os.Args[i])
 	}
 
+	greeter()
+}
+
+func greeter() {
+	for i := 1; i < len(os.Args); i++ {
+		name := os.Args[i] // Set the name to be stored in the [1] position of the Args. [0] is used to store the path
+		fmt.Println("Hello", name)
+	}
+
+	name, age := "Elden", 32
+	fmt.Println("I am", name)
+	fmt.Println("I am", age, "years old")
 }
 
 // Side note: go build -o, the -o arguments allows me to name the compiled program
